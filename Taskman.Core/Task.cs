@@ -12,6 +12,16 @@ public class TaskNode : TaskProperties {
     public List<TaskNode> RequiredBy = [];
     public List<TaskNode> Requires = [];
 
+    public void AddDependency(TaskNode task) {
+        task.RequiredBy.Add(this);
+        this.Requires.Add(task);
+    }
+
+    public void AddDependency(List<TaskNode> tasks) {
+        tasks.ForEach((task) => task.RequiredBy.Add(this));
+        this.Requires.AddRange(tasks);
+    }
+
 }
 
 public class TaskProperties {
