@@ -30,6 +30,8 @@ public class TaskProperties {
 
     public DateTime? Deadline { get; protected set; }
     public TaskStatus Status { get; protected set; } = TaskStatus.Pending;
+
+    public DateTime? Created { get; } = DateTime.UtcNow;
 }
 
 public enum TaskStatus { Pending, Done }
