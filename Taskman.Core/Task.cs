@@ -7,8 +7,10 @@ public class TaskNode : TaskProperties {
 
     public TaskNode(string name) {
         this.Name = name;
+        this.Id = Guid.NewGuid();
     }
 
+    public Guid Id { get; private set; }
     public List<TaskNode> RequiredBy = [];
     public List<TaskNode> Requires = [];
 
