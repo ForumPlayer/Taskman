@@ -11,8 +11,8 @@ public class TaskNode : TaskProperties {
     }
 
     public Guid Id { get; private set; }
-    public List<TaskNode> RequiredBy = [];
-    public List<TaskNode> Requires = [];
+    public TaskList RequiredBy = [];
+    public TaskList Requires = [];
 
     public void AddDependency(TaskNode task) {
         task.RequiredBy.Add(this);
